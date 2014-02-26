@@ -30,4 +30,4 @@ interfaces.
 
 **Note: ** The built-in CLI server is *for development only*.
 
-Open a Browser and goto http://127.0.0.1:8000/app/
+Open a Browser and goto http://127.0.0.1:8000/app/index.html

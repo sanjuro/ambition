@@ -22,7 +22,7 @@ class User implements InputFilterAwareInterface
 		$this->id         = (!empty($data['id'])) ? $data['id'] : null;
 		$this->first_name = (!empty($data['first_name'])) ? $data['first_name'] : null;
 		$this->last_name  = (!empty($data['last_name'])) ? $data['last_name'] : null;
-        $this->useranme   = (!empty($data['useranme'])) ? $data['useranme'] : null;
+        $this->username   = (!empty($data['username'])) ? $data['username'] : null;
 		$this->email      = (!empty($data['email'])) ? $data['email'] : null;
 		$this->dob  	  = (!empty($data['dob'])) ? $data['dob'] : null;
 		$this->password   = (!empty($data['password'])) ? $data['password'] : null;

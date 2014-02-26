@@ -43,14 +43,21 @@
         $scope.users = {};
         $scope.saveUser = function() {
             console.log('call saveUser');
-            $http.post($rootScope.appUrl + '/user', $scope.user)
-                    .success(function(data, status, headers, config) {
-                        console.log('success...');
-                        $location.path('/user');
-                    })
-                    .error(function(data, status, headers, config) {
-                         console.log('error...');
-                    });
+
+            // check to make sure the form is completely valid
+            if ($scope.userForm.$valid) {
+                console.log('call userForm is Valid');
+
+                $http.post($rootScope.appUrl + '/user', $scope.user)
+                        .success(function(data, status, headers, config) {
+                            console.log('success...');
+                            $location.path('/users');
+                        })
+                        .error(function(data, status, headers, config) {
+                             console.log('error...');
+                        });
+            }
+
         }
     });
 
