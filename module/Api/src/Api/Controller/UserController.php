@@ -39,14 +39,12 @@ class UserController extends AbstractRestfulController
             $id = $this->getUserTable()->save($user);
         }else{
             $messages = $form->getMessages();
-            throw new \Exception(array(
+
+            return new JsonModel(array(
                 'errors' => $messages,
             ));
-            // return new JsonModel(array(
-            //     'errors' => $messages,
-            // ));
         }
-
+;
         return new JsonModel(array(
             'data' => $this->get($id),
         ));

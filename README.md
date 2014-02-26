@@ -14,6 +14,8 @@ Installation
     cd ambition
     php composer.phar self-update
     php composer.phar install
+    Run the data/ambition_2014-02-26.sql, this will setup your DB.
+    Update the ZF install and up the configs with your DB credentials.
 
 
 Web Server Setup
@@ -23,9 +25,10 @@ Web Server Setup
 
 The simplest way to get started if you are using PHP 5.4 or above is to start the internal PHP cli-server in the root directory:
 
-    php -S 0.0.0.0:8080 -t public/ public/index.php
+	cd my/project/dir/public <-- must be in this directory
+    php -S 127.0.0.1:8000
 
-This will start the cli-server on port 8080, and bind it to all network
+This will start the cli-server on port 8000, and bind it to all network
 interfaces.
 
 **Note: ** The built-in CLI server is *for development only*.

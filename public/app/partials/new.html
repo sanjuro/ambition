@@ -1,4 +1,6 @@
 <div ng-controller="NewUserCtrl">
+    <div id="messages" class="alert alert-success" ng-show="messages" ng-bind="messages"></div>
+    <div id="error_messages" class="alert alert-error" ng-show="error_messages" ng-bind="error_messages"></div>
     <form <form name="userForm" ng-submit="saveUser()" novalidate class="form-horizontal">
         <h1 class="page-header">Register</h1>
         <fieldset>    
@@ -49,8 +51,21 @@
                 <label class="control-label" for="password">Password</label>
                 <div class="controls">
                     <input id="password" name="password" type="password" class="input-block-level" 
-                           ng-model="user.password" required></input>
-                    <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">You password is required.</p>       
+                           ng-model="user.password" ng-minlength="6"  required></input>
+                    <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">You password is required.</p>   
+                    <p ng-show="userForm.password.$error.minlength" class="help-block">Username is too short.</p>    
+                </div>
+            </div>
+             <div class="control-group" ng-class="{ 'has-error' : userForm.confirm_password.$invalid && !userForm.confirm_password.$pristine }">
+                <label class="control-label" for="confirm_password">Confirm Password</label>
+                <div class="controls">
+        
+                    <input id="confirm_password" name="confirm_password" type="password" class="input-block-level" 
+                            placeholder='confirm password' ng-model='user.confirm_password' required data-password-verify="user.password"></input>
+                       
+                    <p class="help-block" ng-show="userForm.confirm_password.$invalid && !userForm.confirm_password.$pristine">This is required.</p>  
+                    <p class="help-block" ng-show="userForm.confirm_password.$dirty && userForm.confirm_password.$error.dontMatch">Passwords don't match!</p>
+
                 </div>
             </div>
         </fieldset> 

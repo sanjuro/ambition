@@ -50,15 +50,27 @@
 
                 $http.post($rootScope.appUrl + '/user', $scope.user)
                         .success(function(data, status, headers, config) {
-                            console.log('success...');
-                            $location.path('/users');
+
+                            if (!data.errors) {
+                                console.log('success...');
+                                $scope.messages = 'Your Registration has been sent!';
+                            }else{
+
+                                angular.forEach(data.errors,function(errors,index){
+                                    alert(index);
+
+                                    $scope.error_messages = 'There appears to be an issue with your ' + index;
+                                })
+                            }
+
+                            // $location.path('/users');
                         })
                         .error(function(data, status, headers, config) {
                              console.log('error...');
                         });
             }
 
-        }
+        };
     });
 
 }());
