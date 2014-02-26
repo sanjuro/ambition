@@ -29,3 +29,5 @@ This will start the cli-server on port 8080, and bind it to all network
 interfaces.
 
 **Note: ** The built-in CLI server is *for development only*.
+
+Open a Browser and goto http://127.0.0.1:8000/app/
