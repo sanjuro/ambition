@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backbone</title>
+    <meta charset="utf-8">
+    <title>ZF2 Skeleton Application</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <link type="text/css" rel="stylesheet" media="screen" href="/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="/css/bootstrap-theme.min.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="/css/style.css">
+    <link type="image/vnd.microsoft.icon" rel="shortcut icon" href="/img/favicon.ico">
+   
+    <script src="/js/bootstrap.min.js" type="text/javascript">
+</head>
+
+<body>
+    <div id="divClient">
+
+        <form role="form" method="post" action="http://127.0.0.1/api/v1/user">
+
+          <input type="hidden" value="" name="id">  <input type="hidden" value="623171e94c9f8803502ea59686c03e11" name="csrf">
+          <div class="form-group">
+            <label for="first_name">First Name</label>    <input type="text" placeholder="Enter your first name" name="first_name" id="first_name" class="form-control">
+              </div>
+
+          <div class="form-group">
+            <label for="last_name">Last Name</label>    <input type="text" placeholder="Enter your first name" name="last_name" id="last_name" class="form-control">
+              </div>
+
+          <div class="form-group">
+            <label for="email">Your email address</label>   <input type="email" placeholder="Enter your email" name="email" id="email" class="form-control">
+              </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>    <input type="date" value="" step="1" max="2014-01-01" min="1940-01-01" name="dob">      </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>    <input type="password" placeholder="Enter your password" name="password" id="password" class="form-control">
+              </div>
+
+          <button type="submit" class="btn btn-default" name="submit" id="submitbutton">Register</button>
+        </form>
+
+        <br>
+
+        <ul id="listeClient"></ul>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<div ng-controller="NewUserCtrl">
+    <form  class="form-horizontal">
+        <h1 class="page-header">Register</h1>
+        <fieldset>    
+            <div class="control-group">
+                <label class="control-label" for="first_name">First Name</label>
+                <div class="controls">
+                    <input id="first_name" type="text" class="input-block-level"
+                           required="false" ng-model="user.first_name"></input>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="last_name">Last Name</label>
+                <div class="controls">
+                    <input id="last_name" type="text" class="input-block-level"
+                           required="false" ng-model="user.last_name"></input>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="username">Userame</label>
+                <div class="controls">
+                    <input id="username" type="text" class="input-block-level"
+                           required="false" ng-model="user.username"></input>
+                </div>
+                <span class="error" ng-show="newFeed.$error.required">Required!</span>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="email">Email</label>
+                <div class="controls">
+                    <input id="email" type="email" class="input-block-level"
+                           required="true" ng-model="user.email"></input>
+                </div>
+                <span class="error" ng-show="newFeed.$error.required">Required!</span>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="artist">Date of Birth</label>
+                <div class="controls">
+                    <input id="dob" type="date" class="input-block-level" 
+                           ng-model="user.dob" required="false"></input>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="artist">Password</label>
+                <div class="controls">
+                    <input id="password" type="password" class="input-block-level" 
+                           ng-model="user.password" required="true"></input>
+                </div>
+                <span class="error" ng-show="newFeed.$error.required">Required!</span>
+            </div>
+        </fieldset> 
+        <div class="form-actions">			
+            <button class="btn btn-primary" ng-click="saveUser()">Send Registration</button>
+        </div>
+    </form>
+</div>
